@@ -32,9 +32,17 @@ public class TestJDBC {
 	 * To test if the update is successful.
 	 */
 	@Test
-	public void testUpdateHappy() {
+	public void testUpdateHappy() {	
 		statement.read();
 		statement.update();
+		
+		assertEquals(statement.update(), true);
+	}
+	
+	@Test
+	public void testPreparedUpdateHappy() {
+		statement.read();
+		statement.preparedUpdate();
 		
 		assertEquals(statement.update(), true);
 	}
