@@ -1,14 +1,15 @@
 package com.bridgelabz;
-
 import java.sql.Connection;
 
+import configuration.Configuration;
+import service.StatementDB;
+
 /**
- * Class to check if the connection is established
- * If our connection is not null then the connection is established.
+ * Main class where we check the connection and execute the method.
  * @author Tom
  *
  */
-public class TestConnection {
+public class JDBC {
 
 	public static void main(String[] args) {
 		Configuration config = Configuration.getInstance();
@@ -19,5 +20,8 @@ public class TestConnection {
 			System.out.println(" Connection established");
 		else
 			System.out.println(" Connection failed");
+		
+		StatementDB statement = new StatementDB(connection);
+		statement.read();
 	}
 }
