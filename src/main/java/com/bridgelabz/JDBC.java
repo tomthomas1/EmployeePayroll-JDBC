@@ -22,6 +22,7 @@ public class JDBC {
 			System.out.println(" Connection failed");
 		
 		StatementDB statement = new StatementDB(connection);
+		statement.update();
 		statement.read();
 	}
 }
